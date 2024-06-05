@@ -1,9 +1,9 @@
 /**
- * struct binary_tree_s - Binary tree node
- * @n: Integer stored in the node
- * @parent: Pointer to the parent node
- * @left: Pointer to the left child node
- * @right: Pointer to the right child node
+ * binary_tree_node - Creates a new binary tree node.
+ * @parent: A pointer to the parent node of the node to create.
+ * @value: The value to put in the new node.
+ *
+ * Return: A pointer to the new node, or NULL on failure.
  */
 
 #include "binary_trees.h"
