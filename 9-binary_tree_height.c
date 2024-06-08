@@ -28,7 +28,7 @@ size_t helper_binary_tree(const binary_tree_t *tree)
 
 	if (tree == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 
 	left_height = helper_binary_tree(tree->left);
