@@ -2,22 +2,34 @@
 #include <stddef.h>
 
 /**
- * binary_tree_height - this function calculates the height of a tree
- * @tree: This is pointer to the node
- * @size_t: this is the height
- * Return: the height of the tree
+ * binary_tree_height - Calculates the height of a binary tree
+ * @tree: Pointer to the root node of the tree to measure the height
+ * Return: The height of the tree
  */
-
 size_t binary_tree_height(const binary_tree_t *tree)
+{
+	size_t max_height = helper_binary_tree(tree) - 1;
+
+	return (max_height);
+
+}
+
+
+/**
+ * helper_binary_tree - Helper function to calculate the height
+ * @tree: Pointer to the root node of the tree to measure the height
+ *
+ * Return: The height of the tree
+ */
+size_t helper_binary_tree(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 	{
 		return (0);
 	}
 
+	size_t left_height = helper_binary_tree(tree->left);
+	size_t right_height = helper_binary_tree(tree->right);
 
-	size_t left_height = binary_tree_height(tree->left);
-	size_t right_height = binary_tree_height(tree->right);
-
-	return (left_height > right_height ? left_height: right_height) + 1;
+	return ((left_height > right_height ? left_height : right_height) + 1);
 }
