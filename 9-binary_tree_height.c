@@ -28,8 +28,11 @@ size_t helper_binary_tree(const binary_tree_t *tree)
 		return (0);
 	}
 
-	size_t left_height = helper_binary_tree(tree->left);
-	size_t right_height = helper_binary_tree(tree->right);
+	size_t left_height;
+	size_t right_height;
+
+	left_height = helper_binary_tree(tree->left);
+	right_height = helper_binary_tree(tree->right);
 
 	return ((left_height > right_height ? left_height : right_height) + 1);
 }
